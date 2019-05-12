@@ -50,19 +50,19 @@ void loop() {
 
   updateLCD();
     
-  if(desiredTemp >= temp){
+  if (desiredTemp >= temp) {
     digitalWrite(8,HIGH);
-  }else{
+  } else {
     digitalWrite(8,LOW);
   }
   
   increaseTempState = digitalRead(increaseTemp);
   decreaseTempState = digitalRead(decreaseTemp);
 
-  if(increaseTempState == LOW){
+  if (increaseTempState == LOW) {
     desiredTemp++;
   }
-  if(decreaseTempState == LOW){
+  if (decreaseTempState == LOW) {
     desiredTemp--;
   }
   
@@ -93,7 +93,7 @@ void setupBlueToothConnection()
 
 }
 
-void updateLCD(){
+void updateLCD() {
     LCD.setCursor(0,0);
     LCD.print("CurrentTemp:");
     LCD.println(temp);
@@ -102,5 +102,3 @@ void updateLCD(){
     LCD.println(desiredTemp);
     delay(100);
 }
-
-
